@@ -1,1 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GIThub
+{
+    class Program
+    {
+        public static void Menu()
+        {
+            int op;
+            op = 1;
+
+            while(op != 0)
+            {
+
+            Console.WriteLine("\n<----Atividade do GIT HUB ------->");
+            Console.WriteLine("\n(1) para consultar" +
+                "\n\n(0)Para Sair do programa");
+            Console.Write("\ndigite a sua opção: ");
+            op = int.Parse(Console.ReadLine());
+
+            if(op == 1)
+            {
+                Salario();
+            }
+
+            }
+            
+
+        }
+
+        public static void Salario()
+        {
+            double salario, salarioF, reajuste;
+            int qtd;
+
+            Console.Write("\nQuantos funcionários?");
+            qtd = int.Parse(Console.ReadLine());
+            salarioF = 0;
+
+            for (int i = 0; i < qtd; i++)
+            {
+                Console.Write("\nDigite o seu sálario do " + (i + 1) + " 
+funcionário: ");
+                salario = double.Parse(Console.ReadLine());
+
+                if (salario < 300) // reajuste de 50%
+                {
+                    reajuste = salario / 100 * 50;
+                    salarioF = salario + reajuste;
+                }
+                if (salario > 300 && salario < 600) // reajuste de 30%
+                {
+                    reajuste = salario / 100 * 30;
+                    salarioF = salario + reajuste;
+                }
+                if (salario > 600) // reajuste de 80%
+                {
+                    reajuste = salario / 100 * 80;
+                    salarioF = salario + reajuste;
+                }
+                Console.WriteLine("\nO salario do " + (i + 1) + " 
+funcionário é: " + salarioF + " reais");
+            }
+
+        }
+
+        static void Main(string[] args)
+        {
+
+            Menu();
+
+
+
+        }
+    }
+}
 
